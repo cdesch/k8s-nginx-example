@@ -1,9 +1,26 @@
-kubectl apply -f deployments
+# k8s-nginx-example
 
-kubectl delete -f deployments
+- [repo](https://github.com/cdesch/k8s-nginx-example)
 
+## Deployment
 
-docker run -it --rm -d -p 8080:80 --name web -v /Users/cj1/projects/k8s-nginx-example/data:/usr/share/nginx/html nginx
+    kubectl apply -f deployments
+    kubectl delete -f deployments
+
+## Manual Docker Run
+
+    docker run -it --rm -d -p 8080:80 --name web -v /Users/cj1/projects/k8s-nginx-example/data:/usr/share/nginx/html nginx
+
+## Build Docker
+
+    docker build -t k8s-nginx-example .
+    docker run -it --rm -d -p 8080:80 --name web k8s-nginx-example
+
+## Push to docker
+
+    docker
+    docker tag 23a2e385147c cdesch/k8s-nginx-example
+    docker push cdesch/k8s-nginx-example
 
 
 Ingress

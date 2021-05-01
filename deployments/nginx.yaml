@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: k8s-nginx-example
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: k8s-nginx-example
   replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: nginx
+        app: k8s-nginx-example
     spec:
       containers:
       - name: nginx
-        image: nginx:1.14.2
+        image: cdesch/k8s-nginx-example:latest
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: nginx-persistent-storage
-          mountPath: /usr/share/nginx/html
-      volumes:
-      - name: nginx-persistent-storage
-        persistentVolumeClaim:
-          claimName: nginx-pv-volume
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
