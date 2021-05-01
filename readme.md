@@ -4,8 +4,10 @@
 
 ## Deployment
 
-    kubectl apply -f deployments
-    kubectl delete -f deployments
+    kubectl apply -f deployments/setup/namespace.yaml
+    kubectl apply -n k8s-nginx-example -f deployments
+    kubectl delete -n k8s-nginx-example -f deployments
+    kubectl delete -f deployments/setup/namespace.yaml
 
 ## Manual Docker Run
 
