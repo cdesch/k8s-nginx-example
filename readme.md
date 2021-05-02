@@ -27,7 +27,12 @@
 
     docker images k8s-nginx-example 
     docker tag 66d3a62e4086 cdesch/k8s-nginx-example
-    docker push cdesch/k8s-nginx-example
+    docker tag cdesch/k8s-nginx-example cdesch/k8s-nginx-example:1.0.0
+    docker tag cdesch/k8s-nginx-example cdesch/k8s-nginx-example:latest
+    docker push cdesch/k8s-nginx-example:latest
+    docker push cdesch/k8s-nginx-example:1.0.0
+
+    
 
 
 Ingress

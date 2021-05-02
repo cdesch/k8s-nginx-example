@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: cdesch/k8s-nginx-example:latest
+        image: cdesch/k8s-nginx-example:1.0.0
         ports:
         - containerPort: 80
         resources:
