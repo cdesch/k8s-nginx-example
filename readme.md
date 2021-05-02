@@ -25,8 +25,8 @@
 
 ## Push to docker
 
-    docker
-    docker tag 23a2e385147c cdesch/k8s-nginx-example
+    docker images k8s-nginx-example 
+    docker tag 66d3a62e4086 cdesch/k8s-nginx-example
     docker push cdesch/k8s-nginx-example
 
 
