@@ -2,6 +2,7 @@ bases:
     - ../base
 
 namePrefix: prod-
+namespace: prod-k8s-nginx-example
 
 commonLabels:
     env: prod
