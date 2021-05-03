@@ -91,3 +91,10 @@ function change_line {
 change_line "cdesch/k8s-nginx-example:1.0.0" "cdesch/k8s-nginx-example:1.0.1" ./deployments/deployment.yaml
 change_line "TEXT_TO_BE_REPLACED" "This line is removed by the admin." yourFile
 sed -i 's/cdesch\/k8s-nginx-example:1.0.0/cdesch\/k8s-nginx-example:1.0.1/' deployments/deployment.yaml
+PACKAGE_VERSION=$(cat package.json \
+  | grep version \
+  | head -1 \
+  | awk -F: '{ print $2 }' \
+  | sed 's/[",]//g')
+
+echo $PACKAGE_VERSION
