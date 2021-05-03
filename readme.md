@@ -32,6 +32,9 @@
     docker push cdesch/k8s-nginx-example:latest
     docker push cdesch/k8s-nginx-example:1.0.0
 
+
+$ sed -i 's/{OLD_TERM}/{NEW_TERM}/' {file}
+
     
 
 
@@ -48,3 +51,5 @@ kubectl delete -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/con
 
 kubectl apply -f ingress.yaml
 kubectl delete -f ingress.yaml
+
+
